@@ -1,0 +1,31 @@
+GPUBurn is designed to test CUDA capable GPU is order to determine corrupted units.
+
+This bench is intended to build a map a corrupted unit in order to avoid them when performing computation.
+
+********************************************************** 		
+1) Build an executable
+********************************************************** 		
+1.1) Generate Makefile as follow
+ 		> cmake Cmakelist
+ 		
+1.2) Compile code 		
+ 		> make	
+ 		
+ 		
+********************************************************** 		
+2) Usage 
+********************************************************** 		
+Usage: ./stresstest [-d devID] [-f FILENAME] [-k KERNEL] [-t timelimit] [-N Iter] 
+ -a : Test all kernel alternatively 
+ -d : Select the device to test 
+ -f : Specify the output file for the result (default stdout) 
+ -m : Specify the maximum temperature of the device (default 200°C, not implemented on this version) 
+ -k : Specify which kernel to select (ALL, MADKernel, ShMemKernel, REGREGKernel, ) 
+ -t : Set the timer to 'timelimit' second (default 5 sec, -1 for nolimit)
+ -N : Set the number of iteration per work-item to 'Iter' (default 1000) 
+ -h : Print out this help 
+ 
+ example: Test GPU device N°0 for MAD units for 1 hour and output results in 'result.txt'.
+ 		> ./stresstest -d=0 -k MADKernel -t 3600 -f result.txt
+ 		
+ 		
