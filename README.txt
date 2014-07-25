@@ -5,7 +5,7 @@ How to use:
  which is for example:
  
   testKernel<<< grid, threads, mem_size >>>( d_idata, d_odata);
-
+ 
 
 2) Modify the file which contains calls to CUDA kernels as follow
 	#include "reliability_cpu.h"					// Add functions related to reliability
